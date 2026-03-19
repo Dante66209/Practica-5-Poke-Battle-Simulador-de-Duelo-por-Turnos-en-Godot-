@@ -1,10 +1,10 @@
-# 🎮 Pokémon-Style Battle System (Godot)
+# Pokémon-Style Battle System (Godot)
 
 > Proyecto inspirado en el sistema de combate de Pokémon, desarrollado en Godot como parte de mi formación en Ingeniería en Computación.
 
 ---
 
-## 🧠 Descripción
+## Descripción
 
 Este proyecto implementa un sistema de batalla por turnos similar al de Pokémon, enfocado en la lógica de combate, interacción entre entidades y manejo de estados.
 
@@ -12,7 +12,7 @@ El objetivo principal es simular mecánicas clásicas como ataques, reducción d
 
 ---
 
-## 🚀 Características
+## Características
 
 * ⚔️ Sistema de combate por turnos
 * ❤️ Barra de vida dinámica con animaciones
@@ -24,7 +24,7 @@ El objetivo principal es simular mecánicas clásicas como ataques, reducción d
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 * **Motor**: Godot Engine
 * **Lenguaje**: GDScript
@@ -56,7 +56,7 @@ El objetivo principal es simular mecánicas clásicas como ataques, reducción d
 
 ---
 
-## 🎮 Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
 1. Clonar el repositorio:
 
@@ -70,7 +70,7 @@ El objetivo principal es simular mecánicas clásicas como ataques, reducción d
 
 ---
 
-## 📸 Capturas (opcional)
+## Capturas (opcional)
 
 *Aquí puedes agregar imágenes o gifs del gameplay*
 
@@ -85,7 +85,7 @@ No se pretende infringir derechos de autor.
 
 ---
 
-## 📈 Futuras mejoras
+## Futuras mejoras
 
 * Sistema de habilidades más complejo
 * Efectos de estado avanzados
@@ -95,17 +95,73 @@ No se pretende infringir derechos de autor.
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **José Andrés Tovar Esparza**
 Ingeniero en Computación | Interesado en IA, Machine Learning y desarrollo de videojuegos
 
 ---
+## Créditos y Recursos
 
-## ⭐ Créditos
-
-* Inspirado en la saga Pokémon
-* Desarrollo propio del sistema de combate y lógica del juego
+Este proyecto hace uso de diversos recursos externos con fines educativos. Agradezco a sus respectivos creadores y comunidades:
 
 ---
 
+### Sprites de Pokémon
+
+Sprites utilizados para representar las criaturas en batalla:
+
+https://www.reddit.com/r/PokemonROMhacks/comments/1cyz9d0/gbc_battle_sprite_revamps_for_gba_now_available/
+
+---
+
+### Base del proyecto (framework)
+
+Este proyecto está basado en una implementación previa que sirvió como punto de partida:
+
+https://github.com/OpMonTeam/OpMon/tree/master
+
+Agradecimiento especial al equipo de **OpMon** por proporcionar una base sólida para el desarrollo del sistema de batalla, así como la estructura general del proyecto.
+
+---
+
+### Fondo de inicio
+
+Imagen utilizada como fondo en la pantalla principal:
+
+https://mylivewallpapers.com/anime/pokemon-nap-time-live-wallpaper/
+
+---
+
+### Sonidos
+
+Efectos de sonido y clips de audio:
+
+https://www.101soundboards.com/boards/22153-pokemon-soundboard
+
+---
+
+### Base de datos Pokémon
+
+Información utilizada como referencia para estadísticas, movimientos y características:
+
+https://pokemondb.net/
+
+---
+
+### Tipografía
+
+Fuente utilizada en la interfaz del juego:
+
+https://www.dafont.com/pixel-arial-11.font
+
+---
+
+## ⚠️ Nota importante
+
+Todos los recursos mencionados pertenecen a sus respectivos autores.
+Pokémon es propiedad de Nintendo, Game Freak y The Pokémon Company.
+
+Este proyecto se ha desarrollado exclusivamente con fines educativos y de portafolio, sin intención de uso comercial.
+
+---
