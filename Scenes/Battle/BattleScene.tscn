@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://ydd51tbva4op" path="res://Scenes/Battle/BattleScene.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://dhoeva5hvnlue" path="res://Scenes/Battle/BaseDialog.tscn" id="2"]
 [ext_resource type="Texture2D" uid="uid://buufbxggrhsvv" path="res://Data/Sprites/battle/square_1.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://b275in5aftj4q" path="res://Data/Sprites/opmon/unnamed.jpg" id="3_slsav"]
+[ext_resource type="Texture2D" uid="uid://dk7jutl4302e3" path="res://Data/Sprites/opmon/unnamed (22).jpg" id="3_wmpf3"]
 [ext_resource type="Texture2D" uid="uid://bxa8aw5ek5to7" path="res://Data/Sprites/battle/health_jauge.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://d1og4tsn2ljvw" path="res://Data/Sprites/battle/health_bar.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://ccqa4iunna526" path="res://Data/Sprites/opmon/charmander_back.png" id="5_wmpf3"]
+[ext_resource type="Texture2D" uid="uid://chsrclodl8ot0" path="res://Data/Sprites/opmon/2-removebg-preview.png" id="5_e5xk7"]
 [ext_resource type="PackedScene" uid="uid://bwwx6jtea5xa2" path="res://Scenes/Battle/TextDialog.tscn" id="6"]
-[ext_resource type="Texture2D" uid="uid://d20qflrniky3v" path="res://Data/Sprites/opmon/charmander_front.png" id="6_e5xk7"]
+[ext_resource type="Texture2D" uid="uid://de2de6oicauy2" path="res://Data/Sprites/opmon/1-removebg-preview.png" id="6_riamw"]
 [ext_resource type="FontFile" uid="uid://c5pnk4yop31d" path="res://Data/Fonts/main_font.ttf" id="7"]
 [ext_resource type="AudioStream" uid="uid://vy1k87x38egg" path="res://Pokemón/battle.wav" id="8_owtnx"]
 
@@ -188,7 +188,7 @@ metadata/_edit_vertical_guides_ = [-2.0]
 layout_mode = 0
 offset_right = 940.0
 offset_bottom = 631.0
-texture = ExtResource("3_slsav")
+texture = ExtResource("3_wmpf3")
 expand_mode = 2
 
 [node name="BaseDialog" parent="." unique_id=700941335 instance=ExtResource("2")]
@@ -208,10 +208,10 @@ anchor_bottom = 1.0
 offset_left = 133.0
 offset_top = 245.0
 offset_right = 390.0
-offset_bottom = 475.0143
+offset_bottom = 475.01428
 grow_vertical = 2
 pivot_offset = Vector2(150, 267)
-texture = ExtResource("5_wmpf3")
+texture = ExtResource("5_e5xk7")
 expand_mode = 1
 stretch_mode = 5
 
@@ -225,9 +225,9 @@ layout_mode = 0
 offset_left = 625.0
 offset_top = 28.0
 offset_right = 862.0
-offset_bottom = 274.0
+offset_bottom = 274.00003
 pivot_offset = Vector2(150, 267)
-texture = ExtResource("6_e5xk7")
+texture = ExtResource("6_riamw")
 expand_mode = 1
 stretch_mode = 6
 
