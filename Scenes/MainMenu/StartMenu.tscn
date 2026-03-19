@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bfrakbi6wo64u"]
+
+[ext_resource type="Theme" uid="uid://cir3f60kwn7dv" path="res://Data/Fonts/Dialog_Theme.tres" id="1_02vbm"]
+[ext_resource type="Script" uid="uid://qhvrjy0x0xqa" path="res://Scenes/MainMenu/StartMenu.gd" id="2_qk44n"]
+[ext_resource type="VideoStream" uid="uid://dhcpuw3a6leae" path="res://Pokemón/mylivewallpapers-com-Pokemon-Nap-Time-4K.ogv" id="3_qk44n"]
+[ext_resource type="Texture2D" uid="uid://y4kyg1u62ls7" path="res://Pokemón/Gemini_Generated_Image_aca8daaca8daaca8-removebg-preview.png" id="4_1fbyt"]
+[ext_resource type="AudioStream" uid="uid://cfgtq3oyygqk5" path="res://Pokemón/Intro.wav" id="4_qk44n"]
+[ext_resource type="AudioStream" uid="uid://bqeglpmqajl2f" path="res://Pokemón/intro button sound.wav" id="6_l22up"]
+
+[node name="StartMenu" type="Control" unique_id=664990240]
+custom_minimum_size = Vector2(960, 640)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 960.0
+offset_bottom = 640.0
+theme = ExtResource("1_02vbm")
+script = ExtResource("2_qk44n")
+
+[node name="BackgroundVideo" type="VideoStreamPlayer" parent="." unique_id=189873570]
+layout_mode = 0
+offset_right = 965.0
+offset_bottom = 642.0
+stream = ExtResource("3_qk44n")
+autoplay = true
+expand = true
+loop = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1064306165]
+layout_mode = 0
+offset_left = 54.0
+offset_top = -172.0
+offset_right = 897.0
+offset_bottom = 253.0
+mouse_filter = 2
+texture = ExtResource("4_1fbyt")
+expand_mode = 1
+
+[node name="StartLabel" type="Label" parent="." unique_id=1352548799]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 119.0
+offset_top = 506.0
+offset_right = -70.0
+offset_bottom = -65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0.8509804, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Start Battle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=1605018402]
+stream = ExtResource("4_qk44n")
+autoplay = true
+
+[node name="StartSound" type="AudioStreamPlayer" parent="." unique_id=1561449987]
+stream = ExtResource("6_l22up")
+
+[node name="Fade" type="ColorRect" parent="." unique_id=193987428]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 645.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

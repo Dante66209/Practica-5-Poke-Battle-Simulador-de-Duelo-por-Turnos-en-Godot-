@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dqham07nvllr2"]
+
+[ext_resource type="Texture2D" uid="uid://dw07teqa60t2v" path="res://Pokemón/gFrontSprite001Bulbasaur-removebg-preview.png" id="2_houng"]
+[ext_resource type="Texture2D" uid="uid://bnkfvog6vk3kw" path="res://Pokemón/gFrontSprite004Charmander-removebg-preview.png" id="3_r80b0"]
+[ext_resource type="Texture2D" uid="uid://00alsu8co5lp" path="res://Pokemón/gFrontSprite007Squirtle-removebg-preview.png" id="4_5hdc5"]
+[ext_resource type="AudioStream" uid="uid://vy1k87x38egg" path="res://Pokemón/battle.wav" id="5_r80b0"]
+
+[sub_resource type="GDScript" id="GDScript_ex2ck"]
+script/source = "extends Control
+
+@onready var pokemon_list = get_node_or_null(\"MarginContainer/VBoxContainer/PokemonList\")
+@onready var confirm_button = get_node_or_null(\"MarginContainer/VBoxContainer/ConfirmButton\")
+@onready var music: AudioStreamPlayer2D = $SelectMusic
+
+var selected_option = null
+
+func _ready():
+
+	print(\"DEBUG pokemon_list:\", pokemon_list)
+	print(\"DEBUG confirm_button:\", confirm_button)
+
+	if music:
+		music.play()
+
+	if confirm_button == null:
+		push_error(\"ConfirmButton no encontrado.\")
+		return
+
+	if pokemon_list == null:
+		push_error(\"PokemonList no encontrado.\")
+		return
+
+	confirm_button.disabled = true
+
+	load_pokemon()
+
+func load_pokemon():
+
+	var species_list = [
+		load(\"res://Data/GodotResources/Species/NANOLPHIN.tres\"),
+		load(\"res://Data/GodotResources/Species/ROSARIN.tres\")
+	]
+
+	var option_scene = preload(\"res://Scenes/pokemon_option.tscn\")
+
+	for species in species_list:
+
+		if species == null:
+			continue
+
+		var option = option_scene.instantiate()
+
+		option.setup(species)
+
+		option.connect(\"pokemon_selected\", Callable(self, \"_on_pokemon_selected\"))
+
+		pokemon_list.add_child(option)
+
+func _on_pokemon_selected(option):
+
+	selected_option = option
+
+	for child in pokemon_list.get_children():
+		child.modulate = Color(1,1,1)
+
+	option.modulate = Color(1,1,0.6)
+
+	confirm_button.disabled = false
+
+func _on_ConfirmButton_pressed():
+
+	if selected_option == null:
+		return
+
+	print(\"Pokemon elegido:\", selected_option.species.id)
+"
+
+[node name="PokemonSelect" type="Control" unique_id=1762934610]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = SubResource("GDScript_ex2ck")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=642847867]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=880102111]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=642640598]
+layout_mode = 2
+text = "Choose your Pokemon "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PokemonList" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=493762921]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Pikachu" type="Button" parent="MarginContainer/VBoxContainer/PokemonList" unique_id=1522613817]
+layout_mode = 2
+mouse_filter = 2
+icon = ExtResource("2_houng")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PokemonList/Pikachu" unique_id=1223045857]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Charmander" type="Button" parent="MarginContainer/VBoxContainer/PokemonList" unique_id=230009887]
+layout_mode = 2
+icon = ExtResource("3_r80b0")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PokemonList/Charmander" unique_id=922135730]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Bulbasaur" type="Button" parent="MarginContainer/VBoxContainer/PokemonList" unique_id=1081083721]
+layout_mode = 2
+mouse_filter = 2
+icon = ExtResource("4_5hdc5")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/PokemonList/Bulbasaur" unique_id=127669171]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=908821710]
+layout_mode = 2
+mouse_filter = 2
+disabled = true
+text = "Confirm"
+
+[node name="Select Music" type="AudioStreamPlayer" parent="." unique_id=809410803]
+stream = ExtResource("5_r80b0")
+autoplay = true
+
+[node name="BackButton" type="Button" parent="Select Music" unique_id=1290275062]
+offset_top = 138.0
+offset_right = 336.0
+offset_bottom = 169.0
+text = "Back        "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]

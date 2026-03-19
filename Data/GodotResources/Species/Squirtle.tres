@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Species" format=3 uid="uid://dirdq7o5jgvk3"]
+
+[ext_resource type="Script" uid="uid://50uhtcgyjejp" path="res://Objects/Species.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dcxgnsn5tdwmo" path="res://Data/Sprites/opmon/squirtle_front.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dtldui7x8umgs" path="res://Data/Sprites/opmon/squirtle_back.png" id="3"]
+[ext_resource type="Resource" uid="uid://c7umqbgwt6cmk" path="res://Data/GodotResources/Moves/Tackle.tres" id="4"]
+[ext_resource type="Resource" uid="uid://b1pq2suvej5ne" path="res://Data/GodotResources/Moves/Growl.tres" id="5"]
+[ext_resource type="Resource" uid="uid://ceq8lmay66wkj" path="res://Data/GodotResources/Moves/WaterGun.tres" id="6"]
+[ext_resource type="Resource" uid="uid://bwoprvu1xlnam" path="res://Data/GodotResources/Moves/Harden.tres" id="7"]
+
+[resource]
+script = ExtResource("1")
+initial_moves = Array[Resource]([ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7")])
+id = "SQUIRTLE"
+opdex_number = 7
+name = "SQUIRTLE"
+type_1 = 3
+type_2 = 18
+height = 0.5
+weight = 9.0
+base_attack = 48
+base_defense = 65
+base_special_attack = 50
+base_special_defense = 64
+base_speed = 43
+base_hp = 44
+ev_given = Array[int]([2])
+capture_rate = 45
+front_texture = ExtResource("2")
+back_texture = ExtResource("3")

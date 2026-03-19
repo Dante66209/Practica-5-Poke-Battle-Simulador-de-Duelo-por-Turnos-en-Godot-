@@ -1,0 +1,27 @@
+# Godot Import files
+*.import/
+
+# Godot
+.godot
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# System/tool-specific ignores
+.directory
+*~
+user/
+
+# Plugin specific ignores
+screenshots/
+icons.pngs/
+
+
+addons/godot_editor_discord_presence/
+
+default_env.tres

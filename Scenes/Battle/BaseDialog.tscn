@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dhoeva5hvnlue"]
+
+[ext_resource type="Texture2D" uid="uid://bmrmuv5nvgor7" path="res://Data/Sprites/UI/arrChoice.png" id="1"]
+[ext_resource type="Script" uid="uid://7o5ujen4g6xg" path="res://Scenes/Battle/BaseDialog.gd" id="2"]
+[ext_resource type="Theme" uid="uid://cir3f60kwn7dv" path="res://Data/Fonts/Dialog_Theme.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://dokdrfxtwvvk3" path="res://Data/Backgrounds/menuframe.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://bqeglpmqajl2f" path="res://Pokemón/intro button sound.wav" id="5_7hwcm"]
+
+[node name="BaseDialog" type="Control" unique_id=929507067]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -475.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-229, 86)
+theme = ExtResource("3")
+script = ExtResource("2")
+
+[node name="SmallDialog" type="NinePatchRect" parent="." unique_id=390526146]
+layout_mode = 0
+offset_left = 577.0
+offset_right = 829.0
+offset_bottom = 107.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="LabelItems" type="Label" parent="SmallDialog" unique_id=1782604513]
+layout_mode = 0
+offset_left = 159.99966
+offset_top = 17.333332
+offset_right = 259.99966
+offset_bottom = 39.333332
+pivot_offset = Vector2(-550, -133)
+theme_override_colors/font_color = Color(0.4382773, 0.43827733, 0.4382773, 1)
+theme_override_font_sizes/font_size = 13
+text = "POKéMON"
+
+[node name="LabelMoves" type="Label" parent="SmallDialog" unique_id=476781344]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 17.0
+offset_right = 97.0
+offset_bottom = 39.0
+pivot_offset = Vector2(-550, -133)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "FIGHT"
+
+[node name="LabelOpMon" type="Label" parent="SmallDialog" unique_id=189341366]
+layout_mode = 0
+offset_left = 33.333336
+offset_top = 60.0
+offset_right = 133.33334
+offset_bottom = 82.0
+pivot_offset = Vector2(-550, -133)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "BAG"
+
+[node name="LabelRun" type="Label" parent="SmallDialog" unique_id=1325202615]
+layout_mode = 0
+offset_left = 159.66669
+offset_top = 60.0
+offset_right = 201.66669
+offset_bottom = 82.0
+pivot_offset = Vector2(-550, -133)
+theme_override_colors/font_color = Color(0.4630682, 0.4630682, 0.4630682, 1)
+text = "RUN"
+
+[node name="Arrow" type="TextureRect" parent="SmallDialog" unique_id=347253835]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 20.0
+offset_right = 42.0
+offset_bottom = 50.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BigDialog" type="NinePatchRect" parent="." unique_id=61637350]
+layout_mode = 0
+offset_right = 380.0
+offset_bottom = 107.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="RichTextLabel" type="Label" parent="BigDialog" unique_id=1973914433]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 43.0
+offset_right = 368.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " What should [Poke-name] do?"
+
+[node name="StartSound" type="AudioStreamPlayer" parent="." unique_id=476527642]
+stream = ExtResource("5_7hwcm")

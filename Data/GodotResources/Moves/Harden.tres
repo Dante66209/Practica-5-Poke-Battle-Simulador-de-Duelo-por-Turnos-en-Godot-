@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://bwoprvu1xlnam"]
+
+[ext_resource type="Script" uid="uid://cbp3qtqtx7wt8" path="res://Objects/Move.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1mnp3owi28f1" path="res://Objects/MoveEffect.gd" id="1_fui5d"]
+[ext_resource type="Script" uid="uid://kn8q3n8dptaa" path="res://Data/GodotResources/Moves/Effects/ChangeStatEffect.gd" id="2"]
+
+[sub_resource type="Resource" id="1"]
+script = ExtResource("2")
+stat = 1
+change = 1
+
+[resource]
+script = ExtResource("1")
+id = "HARDEN"
+type = 9
+accuracy = 100
+category = 2
+never_fails = true
+max_power_points = 30
+pre_effect = Array[ExtResource("1_fui5d")]([SubResource("1")])
+move_animation = "SLOW_DOUBLE_DIP"

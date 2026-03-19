@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Move" format=3 uid="uid://ceq8lmay66wkj"]
+
+[ext_resource type="Script" uid="uid://cbp3qtqtx7wt8" path="res://Objects/Move.gd" id="1"]
+[ext_resource type="Script" uid="uid://c1mnp3owi28f1" path="res://Objects/MoveEffect.gd" id="1_3nj7a"]
+
+[resource]
+script = ExtResource("1")
+id = "WATER_GUN"
+power = 40
+type = 3
+accuracy = 100
+category = 1
+max_power_points = 25
+move_animation = "PULSING_SCOOT"

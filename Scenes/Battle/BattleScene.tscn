@@ -1,0 +1,328 @@
+[gd_scene format=3 uid="uid://cvlh3mbmkwtug"]
+
+[ext_resource type="Script" uid="uid://ydd51tbva4op" path="res://Scenes/Battle/BattleScene.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dhoeva5hvnlue" path="res://Scenes/Battle/BaseDialog.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://buufbxggrhsvv" path="res://Data/Sprites/battle/square_1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b275in5aftj4q" path="res://Data/Sprites/opmon/unnamed.jpg" id="3_slsav"]
+[ext_resource type="Texture2D" uid="uid://bxa8aw5ek5to7" path="res://Data/Sprites/battle/health_jauge.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d1og4tsn2ljvw" path="res://Data/Sprites/battle/health_bar.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ccqa4iunna526" path="res://Data/Sprites/opmon/charmander_back.png" id="5_wmpf3"]
+[ext_resource type="PackedScene" uid="uid://bwwx6jtea5xa2" path="res://Scenes/Battle/TextDialog.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://d20qflrniky3v" path="res://Data/Sprites/opmon/charmander_front.png" id="6_e5xk7"]
+[ext_resource type="FontFile" uid="uid://c5pnk4yop31d" path="res://Data/Fonts/main_font.ttf" id="7"]
+[ext_resource type="AudioStream" uid="uid://vy1k87x38egg" path="res://Pokemón/battle.wav" id="8_owtnx"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="Theme" id="2"]
+default_font = SubResource("1")
+Label/colors/font_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_slsav"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(133, 245)]
+}
+
+[sub_resource type="Animation" id="Animation_scfjq"]
+resource_name = "attack"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(133, 245), Vector2(174, 221), Vector2(130, 240), Vector2(133, 245)]
+}
+
+[sub_resource type="Animation" id="Animation_riamw"]
+resource_name = "hurt"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.26667002),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(133, 245), Vector2(90, 245), Vector2(170, 245), Vector2(133, 245)]
+}
+
+[sub_resource type="Animation" id="Animation_7dfnc"]
+resource_name = "ko"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(133, 245), Vector2(100, 245), Vector2(133, 280)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kb2gb"]
+_data = {
+&"RESET": SubResource("Animation_slsav"),
+&"attack": SubResource("Animation_scfjq"),
+&"hurt": SubResource("Animation_riamw"),
+&"ko": SubResource("Animation_7dfnc")
+}
+
+[sub_resource type="Animation" id="Animation_wmpf3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(625, 28)]
+}
+
+[sub_resource type="Animation" id="Animation_e5xk7"]
+resource_name = "attack"
+length = 0.26666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(625, 28), Vector2(580, 61), Vector2(610, 28), Vector2(625, 28)]
+}
+
+[sub_resource type="Animation" id="Animation_4sfpr"]
+resource_name = "hurt"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(625, 28), Vector2(590, 28), Vector2(690, 28), Vector2(625, 28)]
+}
+
+[sub_resource type="Animation" id="Animation_wt7gk"]
+resource_name = "ko"
+length = 0.26667002
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(625, 28), Vector2(660, 28), Vector2(625, 60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_riamw"]
+_data = {
+&"RESET": SubResource("Animation_wmpf3"),
+&"attack": SubResource("Animation_e5xk7"),
+&"hurt": SubResource("Animation_4sfpr"),
+&"ko": SubResource("Animation_wt7gk")
+}
+
+[node name="BattleScene" type="Control" unique_id=1121146322]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("2")
+script = ExtResource("1")
+metadata/_edit_vertical_guides_ = [-2.0]
+
+[node name="Fond" type="TextureRect" parent="." unique_id=835614509]
+layout_mode = 0
+offset_right = 940.0
+offset_bottom = 631.0
+texture = ExtResource("3_slsav")
+expand_mode = 2
+
+[node name="BaseDialog" parent="." unique_id=700941335 instance=ExtResource("2")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 475.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PlayerOpMon" type="TextureRect" parent="." unique_id=1797004901]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 133.0
+offset_top = 245.0
+offset_right = 390.0
+offset_bottom = 475.0143
+grow_vertical = 2
+pivot_offset = Vector2(150, 267)
+texture = ExtResource("5_wmpf3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerOpMon" unique_id=1620651809]
+callback_mode_method = 1
+libraries/ = SubResource("AnimationLibrary_kb2gb")
+speed_scale = 0.5
+
+[node name="OpponentOpMon" type="TextureRect" parent="." unique_id=1285053420]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 28.0
+offset_right = 862.0
+offset_bottom = 274.0
+pivot_offset = Vector2(150, 267)
+texture = ExtResource("6_e5xk7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OpponentOpMon" unique_id=1342049301]
+callback_mode_method = 1
+libraries/ = SubResource("AnimationLibrary_riamw")
+speed_scale = 0.5
+
+[node name="PlayerInfobox" type="TextureRect" parent="." unique_id=84477735]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 324.0
+offset_right = 945.0
+offset_bottom = 451.0
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="HP" type="TextureProgressBar" parent="PlayerInfobox" unique_id=1265532936]
+layout_mode = 0
+offset_left = 154.718
+offset_top = 52.7521
+offset_right = 308.718
+offset_bottom = 85.7521
+scale = Vector2(2, 2)
+value = 100.0
+rounded = true
+texture_under = ExtResource("5")
+texture_progress = ExtResource("4")
+texture_progress_offset = Vector2(7, 0)
+
+[node name="Name" type="Label" parent="PlayerInfobox" unique_id=2026584940]
+layout_mode = 0
+offset_left = 107.218
+offset_right = 317.218
+offset_bottom = 33.0
+text = "[Poke-Name]"
+
+[node name="HPLabel" type="Label" parent="PlayerInfobox" unique_id=1411925473]
+layout_mode = 0
+offset_left = 107.218
+offset_top = 33.0
+offset_right = 317.218
+offset_bottom = 66.0
+text = "XXX / XXX"
+
+[node name="OpponentInfobox" type="TextureRect" parent="." unique_id=1704017453]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 23.0
+offset_right = 496.9999
+offset_bottom = 149.9996
+texture = ExtResource("3")
+expand_mode = 1
+flip_h = true
+
+[node name="HP" type="TextureProgressBar" parent="OpponentInfobox" unique_id=1014944116]
+layout_mode = 0
+offset_left = 44.9999
+offset_top = 52.5276
+offset_right = 199.0
+offset_bottom = 85.5276
+scale = Vector2(2, 2)
+value = 100.0
+rounded = true
+texture_under = ExtResource("5")
+texture_progress = ExtResource("4")
+texture_progress_offset = Vector2(7, 0)
+
+[node name="Name" type="Label" parent="OpponentInfobox" unique_id=1115489122]
+layout_mode = 0
+offset_left = 15.9999
+offset_top = 16.1956
+offset_right = 226.0
+offset_bottom = 49.1956
+text = "[Poke-Name]"
+
+[node name="HPLabel" type="Label" parent="OpponentInfobox" unique_id=2133005914]
+layout_mode = 0
+offset_left = 17.9999
+offset_top = 45.195602
+offset_right = 227.99991
+offset_bottom = 78.1956
+text = "XXX / XXX"
+
+[node name="TextDialog" parent="." unique_id=405452937 instance=ExtResource("6")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 476.0
+offset_bottom = 476.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="." unique_id=1071406742]
+stream = ExtResource("8_owtnx")
+autoplay = true

@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://cir3f60kwn7dv"]
+
+[ext_resource type="FontFile" uid="uid://b65gbs7db3onr" path="res://Data/Fonts/PIXEARG_.TTF" id="1_8wni0"]
+
+[resource]
+default_font = ExtResource("1_8wni0")
+Label/colors/font_color = Color(1, 1, 1, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/bold_font_size = 16
